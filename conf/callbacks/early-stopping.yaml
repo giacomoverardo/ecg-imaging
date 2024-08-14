@@ -1,0 +1,7 @@
+# conf/callbacks/early-stopping.yaml
+
+early-stopping:
+  _target_: tensorflow.keras.callbacks.EarlyStopping
+  monitor: val_loss
+  min_delta: 0.00005
+  patience: 10

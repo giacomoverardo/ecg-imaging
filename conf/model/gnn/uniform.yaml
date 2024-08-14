@@ -1,0 +1,3 @@
+# conf/model/gnn/uniform.yaml
+_target_: src.model.gnn.Uniform
+name: uniform

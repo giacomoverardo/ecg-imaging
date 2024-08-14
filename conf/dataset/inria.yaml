@@ -1,0 +1,21 @@
+# conf/dataset/inria.yaml
+
+name: inria
+load_function:
+  _target_: src.dataset.inria.get_inria_dataset
+  datapath: ${datapath}
+  val_size: ${dataset.val_size} 
+  seed: ${seed}
+  adj_matrix_threshold: ${dataset.adj_matrix_threshold} 
+  
+resultsfolder : inria
+activation_map_size: [120,120,120]
+num_electrodes: 260
+sequence_length: 450
+
+val_size: 0.2 
+fs : 1800
+
+adj_matrix_threshold: 40
+adj_matrix_preprocessing:
+  _target_: spektral.utils.convolution.gcn_filter

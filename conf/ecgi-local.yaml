@@ -1,0 +1,24 @@
+# conf/ecgi.yaml
+
+defaults:
+  - optimizer: adam     # Optimizer to be used during training
+  - model: latent-lead     # Model 
+  - dataset: inria    # Dataset
+  - callbacks: 
+    - early-stopping
+    - checkpoint
+    - training-time
+    - learning-rate
+  - _self_
+
+train:                  
+  num_epochs: 240       # Number of training epochs
+
+root_path: ???    # Location of your python script
+output_dir: ${root_path}/results  # Location of final results
+datapath: ???      # Location of input data
+batch_size: 32                    # Batch size
+save_plots: True                  # Save resulting plot or not
+seed: 23                          # Seed for reproducibility
+random_number: 1                  # Used to have different output folders when launched at the same time
+completed: False                  # Is simulation completed (always false at startup)

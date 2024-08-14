@@ -1,0 +1,8 @@
+# conf/model/decoder/conv3d_decoder.yaml
+
+_target_: src.model.decoder3d.Decoder3D
+
+num_3d_filters: 4
+sequence_length: ${model.sequence_length}
+l1_coeff: 1e-6
+l2_coeff: 1e-5

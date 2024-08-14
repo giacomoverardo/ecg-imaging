@@ -1,0 +1,9 @@
+# conf/callbacks/learning-rate.yaml
+learning-rate:
+  _target_: src.utils.callbacks.CustomLRScheduler
+  threshold1: 20
+  threshold2: 40
+  decay1: 0.05
+  decay2: 0.001
+
+

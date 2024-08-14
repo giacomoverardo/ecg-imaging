@@ -1,0 +1,19 @@
+# conf/model/encoder/conv1d_encoder.yaml
+
+_target_: src.model.cvae_encoder.CvaeEncoder
+
+filter_size_list: [19, 19, 19, 19, 19, 19, 19, 9, 9, 9]
+num_filters_list: [256, 256, 192, 192, 192, 128, 128, 128, 64, 64] #[32, 32, 32, 64, 96, 128, 128, 128, 128]
+add_avg_pool_list: [ 1,  1,  1,  1,  1,  0,  0,  0,  0]
+sequence_length: ${model.sequence_length}
+num_features: ${model.num_features}
+latent_dim: None
+
+# self.encoder = Cvae_encoder( input_shape=input_shape,
+#                         latent_dim=None,
+#                         filter_size_list = [f1, f1, f1, f1, f1, f1, f2, f2, f2],
+#                         num_filters_list=  [16, 16, 16, 32, 48, 64, 64, 80, 80],
+#                         add_avg_pool_list= [ 1,  1,  1,  1,  1,  0,  0,  0,  0])
+# filter_size_list: [19, 19, 9, 9, 9]
+# num_filters_list: [16, 16, 64, 80, 80]
+# add_avg_pool_list: [1, 1, 1, 0, 0]

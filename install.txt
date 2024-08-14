@@ -1,0 +1,19 @@
+conda create -n ecgi python=3.11
+conda activate ecgi
+
+conda install cudatoolkit=11.8 -y
+conda install cudnn=8.9 -y
+
+conda install conda-forge::matplotlib -y
+conda install conda-forge::hydra-core -y
+conda install conda-forge::pandas -y
+
+
+python -m pip install tensorflow[and-cuda]==2.14
+python -m pip install SimpleITK
+python -m pip install tetgen
+python -m pip install vtk
+python -m pip install pyvista
+python -m pip install pymeshfix
+python -m pip install spektral
+python -m pip install PyWavelets

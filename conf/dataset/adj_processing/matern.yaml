@@ -1,0 +1,6 @@
+# conf/dataset/adj_processing/matern.yaml
+
+name: matern
+_target_: sklearn.gaussian_process.kernels.Matern
+length_scale: 100.0
+nu: 1.5

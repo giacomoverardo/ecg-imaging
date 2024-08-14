@@ -1,0 +1,10 @@
+# conf/model/gnn/gat_model.yaml
+
+_target_: src.model.gnn.GATModel
+name: gat
+
+embedding_nodes: 768
+channels_list: [64, 64, 64, 64, 64, 64, 64, 64]
+attn_heads_list: [12, 12, 12, 12, 12, 12, 12, 12]
+dense_nodes_list: [768, 768, 768, 768, 768, 768, 768, 768] # Linear nodes
+final_dense_nodes: 1

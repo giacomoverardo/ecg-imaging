@@ -1,0 +1,8 @@
+# conf/model/gnn/gcn_model.yaml
+
+_target_: src.model.gnn.GCNModel
+name: gcn
+
+hidden_nodes: [2048, 1024, 512, 256, 128, 64, 32, 16]
+dense_hidden_nodes: [2048, 1024, 512, 256, 128, 64, 32, 16]
+final_dense_nodes: 1

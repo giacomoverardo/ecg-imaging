@@ -1,0 +1,22 @@
+# conf/model/latent-lead.yaml
+defaults:
+  - encoder: conv1d_encoder
+  - decoder: conv3d_decoder
+  - gnn: gat_model # gat_model, uniform or gcn model
+  - _self_
+
+_target_: src.model.latent_lead.LatentLead
+name: latent-lead
+
+batch_size: ${batch_size}
+num_features : ${dataset.num_electrodes}
+num_waves : 2
+sequence_length : ${dataset.sequence_length}
+max_omega: 0.20
+
+reconstruction_acti_weight: 1.0
+reconstruction_signal_weight: 1.0
+alpha_loss_weight: 10.0 
+
+tb_output_dir: "${output_dir}/${model.name}_${dataset.name}_${model.gnn.name}/opt_${optimizer.name}_lr_${optimizer.learning_rate}/${now:%Y-%m-%d}/${now:%H-%M-%S}_${random_number}"
+

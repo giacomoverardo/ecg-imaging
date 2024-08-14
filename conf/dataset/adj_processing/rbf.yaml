@@ -1,0 +1,5 @@
+# conf/dataset/adj_processing/rbf.yaml
+
+name: rbf
+_target_: sklearn.gaussian_process.kernels.RBF
+length_scale: 100.0

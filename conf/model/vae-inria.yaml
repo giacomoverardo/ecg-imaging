@@ -1,0 +1,19 @@
+# conf/model/vae-inria.yaml
+
+_target_: src.model.vae_inria.VaeInria
+name: vae-inria
+
+alpha: 1
+beta: 10
+# Input sizes
+sequence_length: ${dataset.sequence_length}
+num_features: ${dataset.num_electrodes} 
+
+# Output size
+output_size: ${dataset.activation_map_size}
+
+# Latent space
+latent_size: 25
+
+
+tb_output_dir: "${output_dir}/${model.name}_${dataset.name}/opt_${optimizer.name}_lr_${optimizer.learning_rate}/${now:%Y-%m-%d}/${now:%H-%M-%S}_${random_number}"

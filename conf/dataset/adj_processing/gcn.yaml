@@ -1,0 +1,4 @@
+# conf/dataset/adj_processing/gcn.yaml
+
+name: gcn_filter
+_target_: spektral.utils.convolution.gcn_filter
